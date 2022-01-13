@@ -213,16 +213,11 @@ namespace makerbit {
   //% pin.fieldOptions.tooltips="false"
   //% weight=90
   export function connectIrReceiver(
-    pin: DigitalPin,
-    protocol: IrProtocol.NEC
+    pin: DigitalPin
   ): void {
     initIrState();
 
-    if (irState.protocol) {
-      return;
-    }
-
-    irState.protocol = protocol;
+    irState.protocol = IrProtocol.NEC;
 
     enableIrMarkSpaceDetection(pin);
 
